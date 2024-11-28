@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Styles -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #A1AEE2, #D5F6FB); /* Gradient Background */
+            color: #333;
+            overflow-x: hidden;
+            animation: fadeIn 2s forwards;
+        }
+
+        .navbar {
+            background: rgba(174, 198, 207, 0.8); /* Transparent Navbar */
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #FF6F61;
+            transform: scale(1.05);
+        }
+
+        .gallery-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .gallery-title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #4D4D4D;
+            margin: 0;
+            animation: fadeInDown 1.5s ease-out forwards;
+        }
+
+        .gallery-title h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: #6B4226;
+            margin-top: 10px;
+            animation: fadeInRight 1.8s ease-out forwards;
+        }
+
+        .gallery-section {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #4D4D4D;
+            margin-bottom: 20px;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        .gallery-frame {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            animation: fadeInUp 2s ease-out forwards;
+        }
+
+        .frame {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+            position: relative;
+            animation: fadeInUp 2s ease-out forwards;
+        }
+
+        .frame:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border: 5px solid rgb(0, 204, 255); /* RGB Border on hover */
+        }
+
+        .frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .frame:hover::after {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .music-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: #A1AEE2;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .music-btn:hover {
+            color: #FF6F61;
+            transform: scale(1.2);
+        }
+
+        .arrow-buttons {
+            position: fixed;
+            bottom: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 1000;
+        }
+
+        .arrow-buttons a {
+            font-size: 2rem;
+            color: #A1AEE2;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .arrow-buttons a:hover {
+            color: #FF6F61; /* Coral on hover */
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInRight {
+            0% { opacity: 0; transform: translateX(50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="skills.html">Skills</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="gallery-content">
+        <div class="gallery-title">
+            <h1>My Gallery</h1>
+            <h2>Special Memories</h2>
+        </div>
+
+        <div class="gallery-section">
+            <div class="section-title">Family Pictures</div>
+            <div class="gallery-frame">
+                <div class="frame">
+                    <img src="C:\Users\Lenovo\Downloads\IMD318\f1.jpg" alt="Family Picture 1">
+                </div>
+                <div class="frame">
+                    <img src="C:\Users\Lenovo\Downloads\IMD318\f2.jpg" alt="Family Picture 2">
+                </div>
+                <div class="frame">
+                    <img src="C:\Users\Lenovo\Downloads\IMD318\f3.jpg" alt="Family Picture 3">
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-section">
+            <div class="section-title">Friends Pictures</div>
+            <div class="gallery-frame">
+                <div class="frame">
+                    <img src="C:\Users\Lenovo\Downloads\IMD318\e1.jpg" alt="Friends Picture 1">
+                </div>
+                <div class="frame">
+                    <img src="C:\Users\Lenovo\Downloads\IMD318\e2.jpg" alt="Friends Picture 2">
+                </div>
+                <div class="frame">
+                    <img src="C:\Users\Lenovo\Downloads\IMD318\e3.jpg" alt="Friends Picture 3">
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-section">
+            <div class="section-title">Uni Housemates</div>
+            <div class="gallery-frame">
+                <div class="frame">
+                    <img src="C:\Users\Lenovo\Downloads\IMD318\h1.jpg" alt="Uni Housemates 1">
+                </div>
+                <div class="frame">
+                    <img src="C:\Users\Lenovo\Downloads\IMD318\h2.jpg" alt="Uni Housemates 2">
+                </div>
+                <div class="frame">
+                    <img src="C:\Users\Lenovo\Downloads\IMD318\h3.jpg" alt="Uni Housemates 3">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <audio id="backgroundMusic" controls autoplay loop>
+        <source src="C:\Users\Lenovo\Downloads\IMD318\d1.m4a" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="arrow-buttons">
+        <!-- Back Arrow -->
+        <a href="skills.html">
+            <i class="fas fa-arrow-left"></i> <!-- Left Arrow -->
+        </a>
+        <!-- Next Arrow -->
+        <a href="contact.html">
+            <i class="fas fa-arrow-right"></i> <!-- Right Arrow -->
+        </a>
+    </div>
+
+    <script>
+        const musicButton = document.getElementById('musicButton');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+
+        musicButton.addEventListener('click', function() {
+            if (backgroundMusic.muted) {
+                backgroundMusic.muted = false;
+                musicButton.innerHTML = '<i class="fas fa-volume-up"></i>';
+            } else {
+                backgroundMusic.muted = true;
+                musicButton.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            }
+        });
+    </script>
+
+</body>
+</html>

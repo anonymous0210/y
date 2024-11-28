@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Styles -->
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #98F6F5, #A1AEE2); /* Gradient Background */
+            color: #333;
+            overflow-x: hidden;
+            animation: fadeIn 2s forwards;
+        }
+
+        .navbar {
+            background: rgba(174, 198, 207, 0.8); /* Transparent Navbar */
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #FF6F61;
+            transform: scale(1.05);
+        }
+
+        .skills-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .skills-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .skills-title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #4D4D4D;
+            margin: 0;
+            animation: fadeInDown 1.5s ease-out forwards;
+        }
+
+        .skills-title h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: #6B4226;
+            margin-top: 10px;
+            animation: fadeInRight 1.8s ease-out forwards;
+        }
+
+        .skills-frame {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            gap: 30px;
+            margin-top: 30px;
+            transform: scale(0); /* Start from small scale */
+            animation: morphIn 2s ease-in-out forwards; /* Morph effect */
+        }
+
+        .frame {
+            background: #FFF;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            width: 270px;
+            text-align: center;
+            padding: 30px 20px;
+            animation: slideIn 2s ease-out forwards;
+            transition: transform 0.3s ease;
+        }
+
+        .frame:hover {
+            transform: scale(1.05);
+        }
+
+        .frame img {
+            width: 60%;
+            margin-bottom: 15px;
+        }
+
+        .frame h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #4D4D4D;
+            margin-bottom: 15px;
+        }
+
+        .frame p {
+            font-size: 1rem;
+            color: #6A6A6A;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+
+        .music-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: #A1AEE2;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .music-btn:hover {
+            color: #FF6F61;
+            transform: scale(1.2);
+        }
+
+        .arrow-buttons {
+            position: fixed;
+            bottom: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 1000;
+        }
+
+        .arrow-buttons a {
+            font-size: 2rem;
+            color: #A1AEE2;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .arrow-buttons a:hover {
+            color: #FF6F61; /* Coral on hover */
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInRight {
+            0% { opacity: 0; transform: translateX(50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Morph Transition Effect */
+        @keyframes morphIn {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Experience</a>
+        <a href="skills.html">Skills</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="skills-content">
+        <div class="skills-title">
+            <h1>My Skills</h1>
+            <h2>What I Excel At</h2>
+        </div>
+        <div class="skills-frame">
+
+            <div class="frame">
+                <img src="C:\Users\Lenovo\Downloads\IMD318\iii1.jpg" alt="Microsoft Word Icon">
+                <h3>Microsoft Word</h3>
+                <p>Proficient in creating professional documents, reports, and proposals using advanced formatting tools in Microsoft Word.</p>
+            </div>
+
+            <div class="frame">
+                <img src="C:\Users\Lenovo\Downloads\IMD318\iii2.jpg" alt="Microsoft Excel Icon">
+                <h3>Microsoft Excel</h3>
+                <p>Skilled in data analysis, using formulas, pivot tables, and creating reports in Microsoft Excel for business insights.</p>
+            </div>
+
+            <div class="frame">
+                <img src="C:\Users\Lenovo\Downloads\IMD318\iii3.jpg" alt="Microsoft PowerPoint Icon">
+                <h3>Microsoft PowerPoint</h3>
+                <p>Experienced in creating visually appealing presentations with animations, transitions, and multimedia integration.</p>
+            </div>
+        </div>
+
+        <div class="skills-frame">
+
+            <div class="frame">
+                <img src="C:\Users\Lenovo\Downloads\IMD318\iii4.jpg" alt="Social Media Literacy Icon">
+                <h3>Social Media Literacy</h3>
+                <p>Proficient in managing social media platforms and engaging audiences effectively across various channels.</p>
+            </div>
+
+            <div class="frame">
+                <img src="C:\Users\Lenovo\Downloads\IMD318\iii5.jpg" alt="Photo Editing Icon">
+                <h3>Photo Editing</h3>
+                <p>Experienced with tools to enhance and manipulate images for personal and professional use.</p>
+            </div>
+
+            <div class="frame">
+                <img src="C:\Users\Lenovo\Downloads\IMD318\iii6.jpg" alt="Video Editing Icon">
+                <h3>Video Editing</h3>
+                <p>Skilled in editing videos for social media and other platforms, using various software.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="arrow-buttons">
+        <!-- Back Arrow -->
+        <a href="experience.html">
+            <i class="fas fa-arrow-left"></i> <!-- Left Arrow -->
+        </a>
+    </div>
+
+    <audio id="backgroundMusic"controls autoplay loop>
+        <source src="C:\Users\Lenovo\Downloads\IMD318\d1.m4a" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const musicButton = document.getElementById('musicButton');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+
+        musicButton.addEventListener('click', function() {
+            if (backgroundMusic.muted) {
+                backgroundMusic.muted = false;
+                musicButton.innerHTML = '<i class="fas fa-volume-up"></i>';
+            } else {
+                backgroundMusic.muted = true;
+                musicButton.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            }
+        });
+    </script>
+
+</body>
+</html>
